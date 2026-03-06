@@ -1,11 +1,83 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <header>
+        <div><img src="images/counter_logo.png"></div>
+        <div class="nav-bar">
+            <nav>
+                <ul>
+                    <li>Overview</li>
+                    <li>Live Demo</li>
+                    <li>Logic</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+      <div class="container">
+        <h1>Creating a Counter with JS Classes</h1>
+        <p>
+          Using a <code>class</code> allows us to define the
+          <strong>state</strong> (the count) and the
+          <strong>behavior</strong> (increment/decrement) in one blueprint.
+        </p>
+
+        <div class="counter-card" id="counter1">
+          <h3>Live Demo</h3>
+          <div class="display">0</div>
+          <button class="btn-dec">Decrease</button>
+          <button class="btn-reset">Reset</button>
+          <button class="btn-inc">Increase</button>
+        </div>
+
+        <hr />
+
+        <h3>The JavaScript Logic</h3>
+        <p>
+          By using <code>this</code>, we ensure that each instance of the
+          counter tracks its own value without interfering with others.
+        </p>
+
+        <pre><code>
+class Counter {
+    constructor(element) {
+        this.count = 0;
+        this.display = element.querySelector('.display');
+
+        // Bind events
+        element.querySelector('.btn-inc').addEventListener('click', () =&gt; this.update(1));
+        element.querySelector('.btn-dec').addEventListener('click', () =&gt; this.update(-1));
+        element.querySelector('.btn-reset').addEventListener('click', () =&gt; this.reset());
+    }
+
+    update(value) {
+        this.count += value;
+        this.render();
+    }
+
+    reset() {
+        this.count = 0;
+        this.render();
+    }
+
+    render() {
+        this.display.textContent = this.count;
+    }
+}
+
+// Initialization
+const myCounter = new Counter(document.getElementById('counter1'));
+        </code></pre>
+      </div>
+    </main>
+    <footer>
+        <p>CounterJS OOP State Driven UI</p>
+    </footer>
+
+  </body>
 </html>
