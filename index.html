@@ -2,82 +2,113 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <title>OOPS Counter</title>
+    <link
+      href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300%7COpen+Sans"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="css/grid.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+    <script type="module" defer src="js/main.js"></script>
   </head>
   <body>
     <header>
-        <div><img src="images/counter_logo.png"></div>
-        <div class="nav-bar">
-            <nav>
-                <ul>
-                    <li>Overview</li>
-                    <li>Live Demo</li>
-                    <li>Logic</li>
-                </ul>
-            </nav>
-        </div>
+      <h1>Counter.js</h1>
+      <div class="nav-bar">
+        <nav>
+          <ul>
+            <li>Overview</li>
+            <li>Live Demo</li>
+            <li>Logic</li>
+          </ul>
+        </nav>
+      </div>
     </header>
     <main>
-      <div class="container">
-        <h1>Creating a Counter with JS Classes</h1>
+      <section class="overview">
+        <h2>What it does</h2>
         <p>
-          Using a <code>class</code> allows us to define the
-          <strong>state</strong> (the count) and the
-          <strong>behavior</strong> (increment/decrement) in one blueprint.
+          Counter class in JavaScript is a simple JavaScript class that builds a
+          counter widget inside any container element. It keeps track of its own
+          count, creates its own buttons, and updates the display automatically.
+          The count never goes below 0 — the Decrement and Reset buttons go grey
+          when you hit zero.
         </p>
+        <p>
+          <strong>StepCounter</strong> is a subclass that extends Counter.
+          Instead of going up/down by 1, it jumps by a custom step value you set
+          when creating it.
+        </p>
+        <div class="col-span-full"><hr /></div>
+      </section>
 
-        <div class="counter-card" id="counter1">
-          <h3>Live Demo</h3>
-          <div class="display">0</div>
-          <button class="btn-dec">Decrease</button>
-          <button class="btn-reset">Reset</button>
-          <button class="btn-inc">Increase</button>
+      <section class="How-to">
+        <h2>How To Use</h2>
+        <div class="col-span-full m-col-span-6">
+          <h3>Example HTML container markup</h3>
+          <pre class="code-display">
+&lt;div id="my-counter" class="counter"&gt;&lt;/div&gt;</pre
+          >
+
+          <h3>Example instantiation code</h3>
+          <pre class="code-display">
+&lt;script type="module" defer src="js/main.js"&gt;&lt;/script&gt;</pre
+          >
         </div>
 
-        <hr />
+        <div class="col-span-full m-col-span-6">
+          <h3>Explanation of parameters</h3>
+          <pre class="code-display">
+import { Counter } from './counter.js';
+import { StepCounter } from './counter.js';
 
-        <h3>The JavaScript Logic</h3>
-        <p>
-          By using <code>this</code>, we ensure that each instance of the
-          counter tracks its own value without interfering with others.
+new Counter("#my-counter", 0);
+
+new StepCounter("#my-step-counter", 0, 5);</pre
+          >
+        </div>
+        <div class="col-span-full"><hr /></div>
+      </section>
+
+      <section class="live-demo col-span-full">
+        <h2>Live Demo</h2>
+        <p>Here is six counters running independently on the same page.<br>
+          By clicking Reset button it will activated <code>Reset Activated</code>
         </p>
 
-        <pre><code>
-class Counter {
-    constructor(element) {
-        this.count = 0;
-        this.display = element.querySelector('.display');
+        <div class="base-step col-span-full">
+          <h3>Counter with basic step and start at any value</h3>
+        </div>
+        <div class="col-span-full m-col-span-4">
+            <div id="counter-container1" class="counter"></div>
+        </div>
+        <div class="col-span-full m-col-span-4">
+            <div id="counter-container2" class="counter"></div>
+        </div>
+        <div class="col-span-full m-col-span-4">
+            <div id="counterCon" class="counter"></div>
+        </div>
 
-        // Bind events
-        element.querySelector('.btn-inc').addEventListener('click', () =&gt; this.update(1));
-        element.querySelector('.btn-dec').addEventListener('click', () =&gt; this.update(-1));
-        element.querySelector('.btn-reset').addEventListener('click', () =&gt; this.reset());
-    }
+        <div class="step-counter col-span-full">
+          <h3>StepCounter with different value step nd start at any value</h3>
+        </div>
 
-    update(value) {
-        this.count += value;
-        this.render();
-    }
-
-    reset() {
-        this.count = 0;
-        this.render();
-    }
-
-    render() {
-        this.display.textContent = this.count;
-    }
-}
-
-// Initialization
-const myCounter = new Counter(document.getElementById('counter1'));
-        </code></pre>
-      </div>
+        <div class="col-span-full m-col-span-4">
+            <div id="step-counter1" class="counter"></div>
+        </div>
+        <div class="col-span-full m-col-span-4">
+            <div id="step-counter2" class="counter"></div>
+        </div>
+        <div class="col-span-full m-col-span-4">
+            <div id="step-counter3" class="counter"></div>
+        </div>
+        <div class="col-span-full"><hr /></div>
+      </section>
     </main>
     <footer>
-        <p>CounterJS OOP State Driven UI</p>
+      <p>Counter OOP State Driven UI - assigment</p>
     </footer>
-
   </body>
 </html>
