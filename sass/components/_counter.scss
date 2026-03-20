@@ -1,20 +1,58 @@
 @use "../abstracts";
 
 .counter {
-    border: solid 1px #c5c5c5;
-    margin-top: 40px;
-    padding: 20px;
-    box-shadow: 0 0 5px rgba(0,0,0,.2);
-    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-  }
-  
-  button {
+    border: solid 2px abstracts.$primary-color;
     margin-top: 20px;
-    margin-bottom: 20px;
-    margin-right: 20px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    border-radius: 8px;
+    color: #fff;
+}
+
+button {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    margin-right: 10px;
     border: none;
-    padding: 10px;
-    background-color: cadetblue;
+    padding: 10px 16px;
+    background-color: abstracts.$primary-color;
     color: #fff;
     letter-spacing: 1px;
-  }
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    font-size: 0.85rem;
+    transition: background-color 0.2s, opacity 0.2s;
+
+    &:hover {
+        background-color: abstracts.$secondary-color;
+    }
+
+    &.inactive {
+        opacity: 0.25;
+        cursor: not-allowed;
+        background-color: #555;
+
+        &:hover {
+            background-color: #555;
+        }
+    }
+}
+
+.step-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: abstracts.$third-color;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 6px 0;
+}
+
+.counter-display {
+    font-size: 2rem;
+    font-weight: 700;
+    color: abstracts.$secondary-color;
+    margin-bottom: 6px;
+    font-family: 'Courier New', Courier, monospace;
+}
