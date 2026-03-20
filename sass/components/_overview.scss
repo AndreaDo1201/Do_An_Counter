@@ -1,0 +1,20 @@
+@use "../abstracts";
+
+.overview {
+    padding: 2rem 0 1rem;
+
+    h2 {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 38px;
+        color: abstracts.$secondary-color;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 18px;
+        margin-top: 0;
+        margin-bottom: 1rem;
+        line-height: 1.6;
+    }
+}

@@ -1,0 +1,12 @@
+@use "../abstracts";
+footer {
+  background-color: abstracts.$bg-color;
+  height: 40px;
+  p {
+    font-family: "Courier New", Courier, monospace;
+    color: abstracts.$secondary-color;
+    font-size: 18px;
+    margin-left: 35rem;
+    padding-top: 10px;
+  }
+}
