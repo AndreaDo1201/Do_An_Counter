@@ -1,0 +1,13 @@
+@use "../abstracts";
+ .overview {
+    h2 {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 38px;
+        color: abstracts.$secondary-color;
+    }
+    p {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 20px;
+        margin-top: -20px;
+    }
+ }

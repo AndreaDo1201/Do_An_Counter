@@ -1,0 +1,25 @@
+@use "../abstracts";
+
+ .How-to {
+    h2 {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 38px;
+        color: abstracts.$secondary-color;
+    }
+    h3 {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 20px;
+        color: abstracts.$third-color;
+    }
+    .code-display {
+    background: #F0FFFA;
+    border-left: 6px solid abstracts.$secondary-color;
+    padding: 12px 16px;
+    font-family: monospace;
+    font-size: 12px;
+    white-space: pre;
+    overflow-x: auto;
+    margin: 8px 0 16px;
+    line-height: 1.4;
+}
+ }
