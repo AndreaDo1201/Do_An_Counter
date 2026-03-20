@@ -1,0 +1,33 @@
+@use "../abstracts";
+
+.live-demo {
+    h2 {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 38px;
+        color: abstracts.$secondary-color;
+    }
+    p {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 20px;
+        margin-top: -20px;
+    }
+    code {
+        color: red;
+    }
+}
+
+.base-step {
+     h3 {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 20px;
+        color: abstracts.$third-color;
+    }
+}
+
+.step-counter {
+     h3 {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 20px;
+        color: abstracts.$third-color;
+    }
+}
