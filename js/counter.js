@@ -1,0 +1,85 @@
+export class Counter {
+    constructor(selector, initialValue = 0) {
+        this.count    = initialValue;
+        this.selector = selector;
+        this.mount();
+    }
+
+    mount() {
+        const container = document.querySelector(this.selector);
+
+        this.display = document.createElement("div");
+        this.display.classList.add("counter-display");
+
+        this.btnDecrement = document.createElement("button");
+        this.btnDecrement.textContent = "Decrement";
+        this.btnDecrement.classList.add("btn-decrement");
+
+        this.btnReset = document.createElement("button");
+        this.btnReset.textContent = "Reset";
+        this.btnReset.classList.add("btn-reset");
+
+        this.btnIncrement = document.createElement("button");
+        this.btnIncrement.textContent = "Increment";
+        this.btnIncrement.classList.add("btn-increment");
+
+        container.appendChild(this.display);
+        container.appendChild(this.btnDecrement);
+        container.appendChild(this.btnReset);
+        container.appendChild(this.btnIncrement);
+
+        this.btnIncrement.addEventListener("click", () => this.increment());
+        this.btnDecrement.addEventListener("click", () => this.decrement());
+        this.btnReset.addEventListener("click",     () => this.reset());
+
+        this.update();
+    }
+
+    increment() {
+        this.count++;
+        this.update();
+    }
+
+    decrement() {
+        if (this.count <= 0) return;
+        this.count--;
+        this.update();
+    }
+
+    reset() {
+        this.count = 0;
+        console.log("Reset Activated!!!");
+        this.update();
+    }
+
+    update() {
+        this.display.textContent = `Count: ${this.count}`;
+        const isZero = this.count === 0;
+        this.btnDecrement.classList.toggle("inactive", isZero);
+        this.btnReset.classList.toggle("inactive",    isZero);
+    }
+}
+
+export class StepCounter extends Counter {
+    constructor(selector, initialValue = 0, step = 1) {
+        super(selector, initialValue);  
+        this.step = step;
+
+        const container = document.querySelector(selector);
+        const label = document.createElement("p");
+        label.classList.add("step-label");
+        label.textContent = `Step: ${this.step}`;
+        container.prepend(label);
+    }
+
+    increment() {
+        this.count += this.step;
+        this.update();
+    }
+
+    decrement() {
+        if (this.count <= 0) return;
+        this.count = Math.max(0, this.count - this.step);
+        this.update();
+    }
+}
