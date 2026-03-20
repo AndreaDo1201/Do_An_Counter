@@ -2,8 +2,8 @@
 
 .counter {
     border: solid 2px abstracts.$primary-color;
-    margin-top: 20px;
-    padding: 24px;
+    margin-top: 16px;
+    padding: 16px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     border-radius: 8px;
@@ -11,18 +11,18 @@
 }
 
 button {
-    margin-top: 16px;
-    margin-bottom: 16px;
-    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 8px;
     border: none;
-    padding: 10px 16px;
+    padding: 7px 12px;
     background-color: abstracts.$primary-color;
     color: #fff;
     letter-spacing: 1px;
     border-radius: 4px;
     cursor: pointer;
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-    font-size: 0.85rem;
+    font-size: 0.78rem;
     transition: background-color 0.2s, opacity 0.2s;
 
     &:hover {
@@ -41,18 +41,18 @@ button {
 }
 
 .step-label {
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     font-weight: 700;
     color: abstracts.$third-color;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin: 0 0 6px 0;
+    margin: 0 0 4px 0;
 }
 
 .counter-display {
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-weight: 700;
     color: abstracts.$secondary-color;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
     font-family: 'Courier New', Courier, monospace;
 }

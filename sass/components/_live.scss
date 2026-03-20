@@ -1,43 +1,41 @@
 @use "../abstracts";
 
 .live-demo {
-    h2 {
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 38px;
-        color: abstracts.$secondary-color;
-    }
+  padding: 1rem 0;
 
-    p {
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 20px;
-        margin-top: -20px;
-        color: #ccc;
-    }
+  h2 {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 38px;
+    color: abstracts.$secondary-color;
+    margin-bottom: 1rem;
+  }
 
-    code {
-        color: abstracts.$third-color;
-        background-color: rgba(255,255,255,0.08);
-        padding: 2px 6px;
-        border-radius: 3px;
-    }
+  p {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: #000000;
+    line-height: 1.6;
+  }
+
+  code {
+    color: abstracts.$third-color;
+    background-color: rgba(255, 0, 0, 0.08);
+    padding: 2px 6px;
+    border-radius: 3px;
+  }
 }
 
 .base-step,
 .step-counter {
-    h3 {
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 20px;
-        color: abstracts.$third-color;
-        margin-top: 30px;
-        margin-bottom: 10px;
-        border-left: 4px solid abstracts.$third-color;
-        padding-left: 10px;
-    }
-}
-
-.counter-row {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    margin-bottom: 20px;
+  h3 {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 18px;
+    color: abstracts.$third-color;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    border-left: 4px solid abstracts.$third-color;
+    padding-left: 10px;
+  }
 }

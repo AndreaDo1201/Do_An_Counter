@@ -1,34 +1,33 @@
 @use "../abstracts";
 
 header {
-    background-color:abstracts.$bg-color ;
+    background-color: abstracts.$bg-color;
+    padding: 2rem 0 1.5rem;
 
     h1 {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 120px;
-    color: abstracts.$secondary-color;
-    margin-left: 360px;
-    padding-top: 2rem;
-}
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 80px;
+        color: abstracts.$secondary-color;
+        margin-left: 480px;
+        padding: 0 2rem;
+    }
 
     .nav-bar {
-    nav {
-        ul {
-            list-style: none;
-            margin-left: 28rem;
-            margin-top: -60px;
-            padding-bottom: 2rem;
-            display: flex;
-            gap: 30px;
-        }
+        nav {
+            ul {
+                list-style: none;
+                margin-left: 500px;
+                padding: 0.75rem 2rem 0;
+                display: flex;
+                gap: 30px;
+            }
 
-        li {
-            cursor: pointer;
-            color: abstracts.$secondary-color;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 28px;
+            li {
+                cursor: pointer;
+                color: abstracts.$secondary-color;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 22px;
+            }
         }
     }
-}
-    
 }
